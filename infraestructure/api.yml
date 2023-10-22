@@ -10,10 +10,12 @@ Resources:
       NetworkMode: awsvpc
       RequiresCompatibilities:
         - FARGATE
-      ExecutionRoleArn: !Join [":", ["arn:aws:iam:", !Ref AWS::AccountId, "role/LabRole"]]
+      # ExecutionRoleArn: !Join [":", ["arn:aws:iam:", !Ref AWS::AccountId, "role/LabRole"]]
+      ExecutionRoleArn: 'arn:aws:iam::845611853261:role/LabRole'
       ContainerDefinitions:
         - Name: api-productos
-          Image: !Join [".", [!Ref AWS::AccountId, "dkr.ecr.us-east-1.amazonaws.com/api-productos:latest"]]
+          # Image: !Join [".", [!Ref AWS::AccountId, "dkr.ecr.us-east-1.amazonaws.com/api-productos:latest"]]
+          Image: '845611853261.dkr.ecr.us-east-1.amazonaws.com/api-productos:latest'
           Cpu: 512
           Memory: 1024
           PortMappings:
